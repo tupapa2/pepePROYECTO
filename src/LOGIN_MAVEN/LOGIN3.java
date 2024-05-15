@@ -28,6 +28,7 @@ public class LOGIN3 extends javax.swing.JFrame {
    
     public LOGIN3() {
         initComponents();
+        
     }
 
 
@@ -44,7 +45,6 @@ public class LOGIN3 extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         usuario1 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         ususu = new javax.swing.JTextField();
         ususu1 = new javax.swing.JTextField();
@@ -55,6 +55,8 @@ public class LOGIN3 extends javax.swing.JFrame {
         contraseña = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
+        contraseña2 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
 
         mover.setBackground(new java.awt.Color(255, 255, 255));
         mover.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -145,12 +147,7 @@ public class LOGIN3 extends javax.swing.JFrame {
         usuario1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         usuario1.setForeground(new java.awt.Color(255, 255, 255));
         usuario1.setText("USUARIO");
-        jPanel1.add(usuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
-
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Solo ingresa si ya tienes una cuenta creada");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 290, -1));
+        jPanel1.add(usuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -161,18 +158,18 @@ public class LOGIN3 extends javax.swing.JFrame {
         ususu.setText("Ingresa el usuario");
         ususu.setBorder(null);
         ususu.setCaretColor(new java.awt.Color(204, 204, 204));
-        jPanel1.add(ususu, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 200, -1));
+        jPanel1.add(ususu, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 200, 20));
 
         ususu1.setBackground(new java.awt.Color(255, 255, 255));
-        ususu1.setText("Ingrese el correo");
+        ususu1.setText(" Ingrese el correo");
         ususu1.setBorder(null);
         ususu1.setCaretColor(new java.awt.Color(204, 204, 204));
-        jPanel1.add(ususu1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 200, -1));
+        jPanel1.add(ususu1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 200, 20));
 
         pass.setBackground(new java.awt.Color(255, 255, 255));
-        pass.setText("******");
+        pass.setText(" ******");
         pass.setBorder(null);
-        jPanel1.add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 200, -1));
+        jPanel1.add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 200, 20));
 
         boton.setBackground(new java.awt.Color(0, 0, 0));
         boton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -189,32 +186,41 @@ public class LOGIN3 extends javax.swing.JFrame {
                 boton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(boton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 260, 100, 30));
+        jPanel1.add(boton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 260, 120, 30));
 
         contraseña1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         contraseña1.setForeground(new java.awt.Color(255, 255, 255));
         contraseña1.setText("CORREO ELECTRONICO");
-        jPanel1.add(contraseña1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
+        jPanel1.add(contraseña1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
 
         contraseña.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         contraseña.setForeground(new java.awt.Color(255, 255, 255));
-        contraseña.setText("CONTRASEÑA");
-        jPanel1.add(contraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
+        contraseña.setText("ID ADMIN");
+        jPanel1.add(contraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/logo3.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, 210, 210));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, 210, 210));
 
         jComboBox1.setBackground(new java.awt.Color(255, 255, 255));
         jComboBox1.setForeground(new java.awt.Color(0, 0, 0));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Puerto Plata", "Zamana", "Barahona", "San Cristobal", "Punta Cana", " ", " " }));
         jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, 110, -1));
 
+        contraseña2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        contraseña2.setForeground(new java.awt.Color(255, 255, 255));
+        contraseña2.setText("CONTRASEÑA");
+        jPanel1.add(contraseña2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
+
+        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField1.setText("Solo si eres administrador");
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 200, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(144, Short.MAX_VALUE)
+                .addContainerGap(134, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(inicio1)
@@ -269,9 +275,10 @@ public class LOGIN3 extends javax.swing.JFrame {
     }//GEN-LAST:event_moverMousePressed
 
     private void boton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton1ActionPerformed
-        String usuario = ususu.getText();
-    String correo = ususu1.getText(); // Obtenemos el correo electrónico del JTextField ususu1
+    String usuario = ususu.getText();
+    String correo = ususu1.getText();
     String contraseña = new String(pass.getPassword());
+    String idAdministrativo = jTextField1.getText();
 
     try {
         Connection conn = DriverManager.getConnection(URL, USUARIO, CONTRASEÑA);
@@ -285,36 +292,58 @@ public class LOGIN3 extends javax.swing.JFrame {
         if (rs.next()) {
             String provinciaSeleccionada = (String) jComboBox1.getSelectedItem();
             switch (provinciaSeleccionada) {
-                  case "Puerto Plata":
-                            PRINCIPAL0 principalPanel0 = new PRINCIPAL0();
-                            principalPanel0.setVisible(true);
+                case "Puerto Plata":
+                    new PRINCIPAL_USUARIO1().setVisible(true);
+                    break;
+                case "Zamana":
+                    new PRINCIPAL_USUARIO2().setVisible(true);
+                    break;
+                case "Punta Cana":
+                    new PRINCIPAL_USUARIO3().setVisible(true);
+                    break;
+                case "Barahona":
+                    new PRINCIPAL_USUARIO4().setVisible(true);
+                    break;
+                case "San Cristobal":
+                    new PRINCIPAL_USUARIO5().setVisible(true);
+                    break;
+                default:
+            }
+            dispose(); // Cierra el JFrame actual
+        } else {
+            // El usuario no se encontró en la base de datos
+            if (!idAdministrativo.isEmpty()) {
+                // Aquí puedes implementar la lógica para mostrar los frames administrativos según el ID administrativo
+                // Por ahora, simplemente mostraremos un mensaje de confirmación
+                if (idAdministrativo.equals("3306A2E7-CDCF-474B-ACD7-B9F95A1317F7")) {
+                    new PRINCIPAL0().setVisible(true);
+                    dispose(); // Cierra la ventana actual
+                } else {
+                    switch(idAdministrativo) {
+                        case "PRINCIPAL1":
+                            new PRINCIPAL1().setVisible(true);
                             dispose(); // Cierra la ventana actual
                             break;
-                        case "Zamana":
-                            PRINCIPAL1 principalPanel1 = new PRINCIPAL1();
-                            principalPanel1.setVisible(true);
+                        case "PRINCIPAL2":
+                            new PRINCIPAL2().setVisible(true);
                             dispose(); // Cierra la ventana actual
                             break;
-                        case "Punta Cana":
-                            PRINCIPAL2 principalPanel2 = new PRINCIPAL2();
-                            principalPanel2.setVisible(true);
+                        case "PRINCIPAL3":
+                            new PRINCIPAL3().setVisible(true);
                             dispose(); // Cierra la ventana actual
                             break;
-                        case "Barahona":
-                            PRINCIPAL3 principalPanel3 = new PRINCIPAL3();
-                            principalPanel3.setVisible(true);
-                            dispose(); // Cierra la ventana actual
-                            break;
-                        case "San Cristobal":
-                            PRINCIPAL4 principalPanel4 = new PRINCIPAL4();
-                            principalPanel4.setVisible(true);
+                        case "PRINCIPAL4":
+                            new PRINCIPAL4().setVisible(true);
                             dispose(); // Cierra la ventana actual
                             break;
                         default:
+                            JOptionPane.showMessageDialog(this, "ID de usuario administrativo no válido: " + idAdministrativo);
+                    }
+                }
+            } else {
+                // Si no se proporcionó un ID administrativo, muestra un mensaje de error
+                JOptionPane.showMessageDialog(this, "Debe ingresar un ID administrativo para acceder al panel administrativo");
             }
-            this.dispose(); // Cierra el JFrame actual
-        } else {
-            JOptionPane.showMessageDialog(this, "Usuario, correo electrónico o contraseña incorrectos");
         }
 
         rs.close();
@@ -323,6 +352,9 @@ public class LOGIN3 extends javax.swing.JFrame {
     } catch (SQLException ex) {
         JOptionPane.showMessageDialog(this, "Error al conectar a la base de datos: " + ex.getMessage());
     }
+
+
+
     }//GEN-LAST:event_boton1ActionPerformed
 
   
@@ -342,14 +374,15 @@ public class LOGIN3 extends javax.swing.JFrame {
     private javax.swing.JButton boton1;
     private javax.swing.JLabel contraseña;
     private javax.swing.JLabel contraseña1;
+    private javax.swing.JLabel contraseña2;
     private javax.swing.JLabel inicio;
     private javax.swing.JLabel inicio1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JPanel mover;
     private javax.swing.JPanel panelp;
     private javax.swing.JPasswordField pass;

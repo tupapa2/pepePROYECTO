@@ -131,29 +131,30 @@ modeloTabla.addColumn("Número Acompañantes");
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/logohotel.png"))); // NOI18N
         jLabel1.setText("Reserva hotel");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(330, 330, 330)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(298, 298, 298))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         Categorias.setBackground(new java.awt.Color(255, 255, 255));
         Categorias.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         Categorias.setForeground(new java.awt.Color(0, 0, 0));
-        Categorias.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Servicios", "Basico: 69$", "Intermedio: 129$", "VIP: 199$" }));
+        Categorias.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Basico: 69$", "Intermedio: 129$", "VIP: 199$" }));
         Categorias.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CategoriasActionPerformed(evt);
@@ -256,9 +257,25 @@ modeloTabla.addColumn("Número Acompañantes");
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(jButton9)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 580, Short.MAX_VALUE)
+                                .addGap(18, 18, 18)))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(12, 12, 12))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addComponent(jButton8)
+                                .addGap(39, 39, 39))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(115, 580, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -285,23 +302,7 @@ modeloTabla.addColumn("Número Acompañantes");
                                 .addComponent(ususu, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(117, 117, 117)
                                 .addComponent(Categorias, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(15, 15, 15))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(jButton9)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 568, Short.MAX_VALUE)
-                                .addGap(18, 18, 18)))
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(12, 12, 12))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(jButton8)
-                                .addGap(39, 39, 39))))))
+                        .addGap(15, 15, 15))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -313,7 +314,7 @@ modeloTabla.addColumn("Número Acompañantes");
                     .addComponent(jLabel4)
                     .addComponent(ususu1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Categorias, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 3, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(31, 31, 31)
@@ -356,24 +357,18 @@ modeloTabla.addColumn("Número Acompañantes");
             .addGroup(layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addComponent(jLabel3)
-                .addContainerGap(690, Short.MAX_VALUE))
+                .addContainerGap(702, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(42, 42, 42)
                 .addComponent(jLabel3)
-                .addContainerGap(365, Short.MAX_VALUE))
+                .addContainerGap(341, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -390,17 +385,13 @@ modeloTabla.addColumn("Número Acompañantes");
     }//GEN-LAST:event_CategoriasActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    double total = Double.parseDouble(Categorias.getSelectedItem().toString().split(": ")[1].replace("$", ""));
-
-    // Obtener los datos ingresados por el usuario en el formulario de reserva
+        // Obtener los datos ingresados por el usuario en el formulario de reserva
     String fechaIngresoString = ususu.getText();
     String fechaSalidaString = ususu1.getText();
     String nombreCliente = jTextField1.getText();
     String apellidoCliente = jTextField2.getText();
     int numeroHuespedes = Integer.parseInt(jTextField4.getText());
     String contacto = jTextField3.getText();
-    double precio = Double.parseDouble(Categorias.getSelectedItem().toString().split(": ")[1].replace("$", ""));
-    String provincia = Categorias.getSelectedItem().toString(); // Obtener la provincia seleccionada
 
     // Convertir las cadenas de fecha en objetos Date manualmente
     java.sql.Date fechaIngreso = convertirFecha(fechaIngresoString);
@@ -417,7 +408,7 @@ modeloTabla.addColumn("Número Acompañantes");
         String contraseñaSQL = "12345";
 
         // Preparar la consulta SQL para insertar la nueva reserva
-        String query = "INSERT INTO Reservaciones_hotel (FechaIngreso, FechaSalida, NombreCliente, ApellidoCliente, NumeroHuespedes, Contacto, Precio, Provincia) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        String query = "INSERT INTO Reservaciones_hotel (FechaIngreso, FechaSalida, NombreCliente, ApellidoCliente, NumeroHuespedes, Contacto) VALUES (?, ?, ?, ?, ?, ?)";
         Connection connection = null;
         PreparedStatement statement = null;
 
@@ -435,8 +426,6 @@ modeloTabla.addColumn("Número Acompañantes");
             statement.setString(4, apellidoCliente);
             statement.setInt(5, numeroHuespedes);
             statement.setString(6, contacto);
-            statement.setDouble(7, precio);
-            statement.setString(8, provincia); // Aquí agregamos el valor para el parámetro Provincia
 
             // Ejecutar la consulta
             int rowsInserted = statement.executeUpdate();
@@ -466,7 +455,7 @@ modeloTabla.addColumn("Número Acompañantes");
                 }
             }
         }
-        String[] datosFila = {fechaIngresoString, fechaSalidaString, nombreCliente, apellidoCliente, String.valueOf(numeroHuespedes), contacto,};
+        String[] datosFila = {fechaIngresoString, fechaSalidaString, nombreCliente, apellidoCliente, String.valueOf(numeroHuespedes), contacto};
         agregarFilaATabla(datosFila);
     }
 }
@@ -480,7 +469,6 @@ private java.sql.Date convertirFecha(String fechaString) {
         System.err.println("Error al convertir la fecha: " + ex.getMessage());
         return null;
     }
-
 
     }//GEN-LAST:event_jButton1ActionPerformed
 

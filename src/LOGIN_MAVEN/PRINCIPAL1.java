@@ -59,6 +59,11 @@ public class PRINCIPAL1 extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenu9 = new javax.swing.JMenu();
         jMenuItem8 = new javax.swing.JMenuItem();
+        jMenu10 = new javax.swing.JMenu();
+        jMenuItem10 = new javax.swing.JMenuItem();
+        jMenuItem13 = new javax.swing.JMenuItem();
+        jMenuItem14 = new javax.swing.JMenuItem();
+        jMenuItem15 = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
         jMenuItem11 = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -113,7 +118,7 @@ public class PRINCIPAL1 extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Zamana");
+        jLabel5.setText("Samana");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 400, -1, -1));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 240, 750));
@@ -180,6 +185,43 @@ public class PRINCIPAL1 extends javax.swing.JFrame {
         jMenu9.add(jMenuItem8);
 
         jMenuBar2.add(jMenu9);
+
+        jMenu10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/logotablas.png"))); // NOI18N
+        jMenu10.setText("TABLAS");
+
+        jMenuItem10.setText("SPA");
+        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem10ActionPerformed(evt);
+            }
+        });
+        jMenu10.add(jMenuItem10);
+
+        jMenuItem13.setText("HABITACIONES");
+        jMenuItem13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem13ActionPerformed(evt);
+            }
+        });
+        jMenu10.add(jMenuItem13);
+
+        jMenuItem14.setText("EMPLEADOS");
+        jMenuItem14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem14ActionPerformed(evt);
+            }
+        });
+        jMenu10.add(jMenuItem14);
+
+        jMenuItem15.setText("HOTEL");
+        jMenuItem15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem15ActionPerformed(evt);
+            }
+        });
+        jMenu10.add(jMenuItem15);
+
+        jMenuBar2.add(jMenu10);
 
         jMenu7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/config-removebg-preview.png"))); // NOI18N
         jMenu7.setText("CONFIGURACION");
@@ -269,20 +311,9 @@ frame.setVisible(true);
     }//GEN-LAST:event_jMenuItem9MouseClicked
 
     private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
-JFrame frame = new JFrame("Nuevo Panel");
-
-// Crea una instancia del nuevo panel INTERIOR_RESERVA
-CONFIGURACION  newPanel = new CONFIGURACION
-      ();
-
-// Agrega el nuevo panel al contenido del marco
-frame.getContentPane().add(newPanel);
-
-// Configura el tamaño del marco para que se ajuste al contenido
-frame.pack();
-
-// Hacer visible el marco
-frame.setVisible(true);   
+   // Abrir el JFrame llamado REGISTRO
+    CONFIG registroFrame = new CONFIG();
+    registroFrame.setVisible(true);
     }//GEN-LAST:event_jMenuItem11ActionPerformed
 
     private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
@@ -335,6 +366,74 @@ frame.setVisible(true);
                                // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
+    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
+        JFrame frame = new JFrame("Nuevo Panel");
+
+        // Crea una instancia del nuevo panel INTERIOR_RESERVA
+        VER_RESERVACIONES_SPA  newPanel = new VER_RESERVACIONES_SPA
+        ();
+
+        // Agrega el nuevo panel al contenido del marco
+        frame.getContentPane().add(newPanel);
+
+        // Configura el tamaño del marco para que se ajuste al contenido
+        frame.pack();
+
+        // Hacer visible el marco
+        frame.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem10ActionPerformed
+
+    private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
+        JFrame frame = new JFrame("Nuevo Panel");
+
+        // Crea una instancia del nuevo panel INTERIOR_RESERVA
+        VER_AGREGAR_HABITACIONES  newPanel = new VER_AGREGAR_HABITACIONES
+        ();
+
+        // Agrega el nuevo panel al contenido del marco
+        frame.getContentPane().add(newPanel);
+
+        // Configura el tamaño del marco para que se ajuste al contenido
+        frame.pack();
+
+        // Hacer visible el marco
+        frame.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem13ActionPerformed
+
+    private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
+        JFrame frame = new JFrame("Nuevo Panel");
+
+        // Crea una instancia del nuevo panel INTERIOR_RESERVA
+        VER_EMPLEADOS  newPanel = new VER_EMPLEADOS
+        ();
+
+        // Agrega el nuevo panel al contenido del marco
+        frame.getContentPane().add(newPanel);
+
+        // Configura el tamaño del marco para que se ajuste al contenido
+        frame.pack();
+
+        // Hacer visible el marco
+        frame.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem14ActionPerformed
+
+    private void jMenuItem15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem15ActionPerformed
+        JFrame frame = new JFrame("Nuevo Panel");
+
+        // Crea una instancia del nuevo panel INTERIOR_RESERVA
+        VER_RESERVACIONES_HOTEL newPanel = new VER_RESERVACIONES_HOTEL
+        ();
+
+        // Agrega el nuevo panel al contenido del marco
+        frame.getContentPane().add(newPanel);
+
+        // Configura el tamaño del marco para que se ajuste al contenido
+        frame.pack();
+
+        // Hacer visible el marco
+        frame.setVisible(true);
+    }//GEN-LAST:event_jMenuItem15ActionPerformed
+
     
   
     public static void main(String args[]) {
@@ -381,6 +480,7 @@ frame.setVisible(true);
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JMenu jMenu10;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
@@ -388,8 +488,12 @@ frame.setVisible(true);
     private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
+    private javax.swing.JMenuItem jMenuItem13;
+    private javax.swing.JMenuItem jMenuItem14;
+    private javax.swing.JMenuItem jMenuItem15;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;

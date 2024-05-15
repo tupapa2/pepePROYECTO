@@ -14,6 +14,8 @@ import java.io.FileOutputStream;
 import java.io.FileNotFoundException;
 import javax.swing.JComboBox;
 import javax.swing.table.DefaultTableModel;
+import java.sql.ResultSet;
+
 
 
 
@@ -25,13 +27,12 @@ public class AGREGAR_HABITACION extends javax.swing.JPanel {
     
     public AGREGAR_HABITACION() {
         initComponents();
-                  // Inicializar el modelo de tabla con las columnas necesarias
         modeloTabla = new DefaultTableModel();
-        modeloTabla.addColumn("Fecha Ingreso");
-        modeloTabla.addColumn("Nombre Cliente");
-        modeloTabla.addColumn("Apellido Cliente");
-        modeloTabla.addColumn("Contacto");
-        modeloTabla.addColumn("Precio");
+      modeloTabla.addColumn("NombreHabitacion");
+modeloTabla.addColumn("Ubicacion");
+modeloTabla.addColumn("Costo");
+modeloTabla.addColumn("TipoCama");
+modeloTabla.addColumn("EstaOcupada");
         
         
         // Asignar el modelo de tabla a la tabla jTable2
@@ -130,16 +131,17 @@ public class AGREGAR_HABITACION extends javax.swing.JPanel {
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Ingresar habitacion");
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/iconohotl3.png"))); // NOI18N
+        jLabel10.setText("Agregar habitacion");
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(285, 285, 285)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel10)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(267, 267, 267))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -183,7 +185,7 @@ public class AGREGAR_HABITACION extends javax.swing.JPanel {
         Categoria.setBackground(new java.awt.Color(255, 255, 255));
         Categoria.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         Categoria.setForeground(new java.awt.Color(0, 0, 0));
-        Categoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Categorias", "Basico: 50$", "Intermedio: 99$", "VIP: 169$" }));
+        Categoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "king", "doble" }));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
@@ -192,7 +194,7 @@ public class AGREGAR_HABITACION extends javax.swing.JPanel {
         Categoria1.setBackground(new java.awt.Color(255, 255, 255));
         Categoria1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         Categoria1.setForeground(new java.awt.Color(0, 0, 0));
-        Categoria1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Categorias", "Basico: 50$", "Intermedio: 99$", "VIP: 169$" }));
+        Categoria1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Libre", "Ocupada" }));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
@@ -201,7 +203,7 @@ public class AGREGAR_HABITACION extends javax.swing.JPanel {
         Categoria2.setBackground(new java.awt.Color(255, 255, 255));
         Categoria2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         Categoria2.setForeground(new java.awt.Color(0, 0, 0));
-        Categoria2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Categorias", "Basico: 50$", "Intermedio: 99$", "VIP: 169$" }));
+        Categoria2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "doble", "king" }));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 0, 0));
@@ -215,49 +217,50 @@ public class AGREGAR_HABITACION extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(12, 12, 12)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 482, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton8))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 478, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel5)
+                                        .addGap(8, 8, 8)
+                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel9)
+                                            .addComponent(jLabel8)
+                                            .addComponent(jLabel6))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(Categoria2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(Categoria1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(Categoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jLabel7)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(68, 68, 68)
+                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(25, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jButton8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton9)
-                        .addGap(86, 86, 86))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel6)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Categoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel7)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addComponent(jLabel5)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                .addComponent(jLabel9)
-                                                .addComponent(jLabel8))
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(Categoria2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(Categoria1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(74, 74, 74)
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(40, Short.MAX_VALUE))))
+                        .addGap(92, 92, 92))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(30, 30, 30)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -267,7 +270,7 @@ public class AGREGAR_HABITACION extends javax.swing.JPanel {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel7))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(11, 11, 11)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Categoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6))
@@ -275,31 +278,26 @@ public class AGREGAR_HABITACION extends javax.swing.JPanel {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Categoria1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel9))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Categoria2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel8))
-                        .addGap(26, 26, 26)
-                        .addComponent(jButton2))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(25, Short.MAX_VALUE))
+                            .addComponent(jLabel8)
+                            .addComponent(Categoria2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -308,154 +306,111 @@ public class AGREGAR_HABITACION extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // Obtener los datos ingresados por el usuario en el formulario de reserva
-        String nombreCliente = jTextField1.getText(); // Obtener el nombre del cliente
-        
-        double precio = Double.parseDouble(Categoria.getSelectedItem().toString().split(": ")[1].replace("$", "")); // Obtener el precio desde la opción seleccionada
+String nombreHabitacion = jTextField1.getText();
+String tipoHabitacion = Categoria.getSelectedItem().toString();
+double precio = Double.parseDouble(jTextField2.getText());
+boolean estaOcupada = Categoria1.getSelectedItem().toString().equals("Ocupada");
+String tipoCama = Categoria2.getSelectedItem().toString();
 
-        // Mostrar un cuadro de diálogo de confirmación
-        int option = JOptionPane.showConfirmDialog(null, "¿Desea realizar la reserva?", "Confirmar Reserva", JOptionPane.YES_NO_OPTION);
-        if (option == JOptionPane.YES_OPTION) {
-            // URL de conexión a la base de datos SQL Server
-            String url = "jdbc:sqlserver://localhost:1433;databaseName=PPHS_puerto_plataa";
-            // Credenciales de inicio de sesión de SQL Server
-            String usuarioSQL = "usuario22";
-            String contraseñaSQL = "12345";
+String url = "jdbc:sqlserver://localhost:1433;databaseName=PPHS_puerto_plataa";
+String usuarioSQL = "usuario22";
+String contraseñaSQL = "12345";
 
-            // Preparar la consulta SQL para insertar la nueva reserva
-            String query = "INSERT INTO Reserva_SPA (Horario, FechaIngreso, NombreCliente, apellidoCliente, Contacto, precio) VALUES (?, ?, ?, ?, ?, ?)";
-            Connection connection = null;
-            PreparedStatement statement = null;
-
-            try {
-                // Establecer la conexión con la base de datos
-                connection = DriverManager.getConnection(url, usuarioSQL, contraseñaSQL);
-
-                // Preparar la consulta SQL
-                statement = connection.prepareStatement(query);
-
-                // Establecer los parámetros de la consulta
-                statement.setString(3, nombreCliente);
-               
-                statement.setDouble(6, precio);
-
-                // Ejecutar la consulta
-                int rowsInserted = statement.executeUpdate();
-                if (rowsInserted > 0) {
-                    JOptionPane.showMessageDialog(null, "Reserva realizada exitosamente", "Éxito", JOptionPane.INFORMATION_MESSAGE);
-                } else {
-                    JOptionPane.showMessageDialog(null, "Error al realizar la reserva", "Error", JOptionPane.ERROR_MESSAGE);
-                }
-            } catch (SQLException ex) {
-                // Capturar cualquier error durante la conexión o la ejecución de la consulta
-                System.err.println("Error al conectar a la base de datos o al ejecutar la consulta: " + ex.getMessage());
-                JOptionPane.showMessageDialog(null, "Error al realizar la reserva", "Error", JOptionPane.ERROR_MESSAGE);
-            } finally {
-                // Cerrar la conexión y liberar los recursos
-                if (statement != null) {
-                    try {
-                        statement.close();
-                    } catch (SQLException ex) {
-                        System.err.println("Error al cerrar el PreparedStatement: " + ex.getMessage());
-                    }
-                }
-                if (connection != null) {
-                    try {
-                        connection.close();
-                    } catch (SQLException ex) {
-                        System.err.println("Error al cerrar la Connection: " + ex.getMessage());
-                    }
-                }
+// Consulta para verificar si la habitación ya existe
+String verificarQuery = "SELECT COUNT(*) FROM Habitaciones WHERE NombreHabitacion = ?";
+try (Connection connection = DriverManager.getConnection(url, usuarioSQL, contraseñaSQL);
+     PreparedStatement verificarStatement = connection.prepareStatement(verificarQuery)) {
+    verificarStatement.setString(1, nombreHabitacion);
+    try (ResultSet resultSet = verificarStatement.executeQuery()) {
+        if (resultSet.next()) {
+            int count = resultSet.getInt(1);
+            if (count > 0) {
+                JOptionPane.showMessageDialog(null, "La habitación " + nombreHabitacion + " ya existe.", "Error", JOptionPane.ERROR_MESSAGE);
+                return; // Sale del método si la habitación ya existe
             }
-            // Agregar el horario a los datos de la fila
-            String[] datosFila = {  nombreCliente, String.valueOf(precio)};
-            agregarFilaATabla(datosFila);
         }
+    }
+
+    // Si la habitación no existe, procede con la inserción
+    String insertarQuery = "INSERT INTO Habitaciones (NombreHabitacion, TipoHabitacion, Precio, EstaOcupada, TipoCama) VALUES (?, ?, ?, ?, ?)";
+    try (PreparedStatement statement = connection.prepareStatement(insertarQuery)) {
+        statement.setString(1, nombreHabitacion);
+        statement.setString(2, tipoHabitacion);
+        statement.setDouble(3, precio);
+        statement.setBoolean(4, estaOcupada);
+        statement.setString(5, tipoCama);
+
+        int rowsInserted = statement.executeUpdate();
+        if (rowsInserted > 0) {
+            JOptionPane.showMessageDialog(null, "Habitación ingresada exitosamente", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null, "Error al ingresar la habitación", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+} catch (SQLException ex) {
+    System.err.println("Error al conectar a la base de datos o al ejecutar la consulta: " + ex.getMessage());
+    JOptionPane.showMessageDialog(null, "Error al conectar a la base de datos o al ejecutar la consulta", "Error", JOptionPane.ERROR_MESSAGE);
+}
+ Object[] datosFila = {nombreHabitacion, tipoHabitacion, precio, estaOcupada, tipoCama};        
+
+ modeloTabla.addRow(datosFila);
+
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-s        // Obtener la fila seleccionada en la tabla
+          int option = JOptionPane.showConfirmDialog(null, "¿Está seguro de cancelar la reserva?", "Confirmar Cancelación", JOptionPane.YES_NO_OPTION);
+        if (option == JOptionPane.YES_OPTION) {
+            eliminarFilaDeTabla();
+        
         int filaSeleccionada = jTable2.getSelectedRow();
-        if (filaSeleccionada != -1) {
-            // Obtener los datos de la fila seleccionada
-            String fechaIngreso = jTable2.getValueAt(filaSeleccionada, 0).toString();
-            String horario = jTable2.getValueAt(filaSeleccionada, 1).toString();
-            String nombreCliente = jTable2.getValueAt(filaSeleccionada, 2).toString();
-            String apellidoCliente = jTable2.getValueAt(filaSeleccionada, 3).toString();
-            String contacto = jTable2.getValueAt(filaSeleccionada, 4).toString();
-            double precio = Double.parseDouble(jTable2.getValueAt(filaSeleccionada, 5).toString());
+    if (filaSeleccionada != -1) {
+        // Obtener los datos de la fila seleccionada
+        String nombreHabitacion = jTable2.getValueAt(filaSeleccionada, 0).toString();
+        String ubicacion = jTable2.getValueAt(filaSeleccionada, 1).toString();
+        double costo = Double.parseDouble(jTable2.getValueAt(filaSeleccionada, 2).toString());
 
-            // Mostrar un cuadro de diálogo de confirmación
-            int option = JOptionPane.showConfirmDialog(null, "¿Está seguro de cancelar la reserva?", "Confirmar Cancelación", JOptionPane.YES_NO_OPTION);
-            if (option == JOptionPane.YES_OPTION) {
-                // URL de conexión a la base de datos SQL Server
-                String url = "jdbc:sqlserver://localhost:1433;databaseName=PPHS_puerto_plataa";
-                // Credenciales de inicio de sesión de SQL Server
-                String usuarioSQL = "usuario22";
-                String contraseñaSQL = "12345";
+       
+        
+            // URL de conexión a la base de datos SQL Server
+               String url = "jdbc:sqlserver://localhost:1433;databaseName=PPHS_puerto_plataa";
+    String usuarioSQL = "usuario22";
+    String contraseñaSQL = "12345";
 
-                // Preparar la consulta SQL para eliminar la reserva de la base de datos
-                String query = "DELETE FROM Reserva_SPA WHERE FechaIngreso = ? AND Horario = ? AND NombreCliente = ? AND apellidoCliente = ? AND Contacto = ? AND precio = ?";
-                Connection connection = null;
-                PreparedStatement statement = null;
+            // Preparar la consulta SQL para eliminar la reserva de la base de datos
+            String query = "DELETE FROM Habitaciones WHERE NombreHabitacion = ? AND Ubicacion = ? AND Costo = ?";
+            try (Connection connection = DriverManager.getConnection(url, usuarioSQL, contraseñaSQL);
+                 PreparedStatement statement = connection.prepareStatement(query)) {
+                // Establecer los parámetros de la consulta
+                statement.setString(1, nombreHabitacion);
+                statement.setString(2, ubicacion);
+                statement.setDouble(3, costo);
 
-                try {
-                    // Establecer la conexión con la base de datos
-                    connection = DriverManager.getConnection(url, usuarioSQL, contraseñaSQL);
-
-                    // Preparar la consulta SQL
-                    statement = connection.prepareStatement(query);
-
-                    // Establecer los parámetros de la consulta
-                    statement.setString(1, fechaIngreso);
-                    statement.setString(2, horario);
-                    statement.setString(3, nombreCliente);
-                    statement.setString(4, apellidoCliente);
-                    statement.setString(5, contacto);
-                    statement.setDouble(6, precio);
-
-                    // Ejecutar la consulta
-                    int rowsDeleted = statement.executeUpdate();
-                    if (rowsDeleted > 0) {
-                        JOptionPane.showMessageDialog(null, "Reserva cancelada exitosamente", "Éxito", JOptionPane.INFORMATION_MESSAGE);
-                        // Eliminar la fila de la tabla
-                        modeloTabla.removeRow(filaSeleccionada);
-                    } else {
-                        JOptionPane.showMessageDialog(null, "Error al cancelar la reserva", "Error", JOptionPane.ERROR_MESSAGE);
-                    }
-                } catch (SQLException ex) {
-                    // Capturar cualquier error durante la conexión o la ejecución de la consulta
-                    System.err.println("Error al conectar a la base de datos o al ejecutar la consulta: " + ex.getMessage());
+                // Ejecutar la consulta
+                int rowsDeleted = statement.executeUpdate();
+                if (rowsDeleted > 0) {
+                    JOptionPane.showMessageDialog(null, "Reserva cancelada exitosamente", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+                    // Eliminar la fila de la tabla
+                    modeloTabla.removeRow(filaSeleccionada);
+                } else {
                     JOptionPane.showMessageDialog(null, "Error al cancelar la reserva", "Error", JOptionPane.ERROR_MESSAGE);
-                } finally {
-                    // Cerrar la conexión y liberar los recursos
-                    if (statement != null) {
-                        try {
-                            statement.close();
-                        } catch (SQLException ex) {
-                            System.err.println("Error al cerrar el PreparedStatement: " + ex.getMessage());
-                        }
-                    }
-                    if (connection != null) {
-                        try {
-                            connection.close();
-                        } catch (SQLException ex) {
-                            System.err.println("Error al cerrar la Connection: " + ex.getMessage());
-                        }
-                    }
                 }
+            } catch (SQLException ex) {
+                System.err.println("Error al conectar a la base de datos o al ejecutar la consulta: " + ex.getMessage());
+                JOptionPane.showMessageDialog(null, "Error al cancelar la reserva", "Error", JOptionPane.ERROR_MESSAGE);
             }
-        } else {
-            JOptionPane.showMessageDialog(null, "Por favor, seleccione una reserva para cancelar.", "Error", JOptionPane.ERROR_MESSAGE);
         }
+    } else {
+        JOptionPane.showMessageDialog(null, "Por favor, seleccione una reserva para cancelar.", "Error", JOptionPane.ERROR_MESSAGE);
+    }
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
+     
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     
