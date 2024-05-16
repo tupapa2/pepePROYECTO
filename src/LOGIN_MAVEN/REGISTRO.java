@@ -41,15 +41,17 @@ public class REGISTRO extends javax.swing.JFrame {
         contraseña1 = new javax.swing.JLabel();
         boton1 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        contraseña2 = new javax.swing.JLabel();
         pass2 = new javax.swing.JPasswordField();
         contraseña3 = new javax.swing.JLabel();
-        ususu2 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
         contraseña5 = new javax.swing.JLabel();
         ususu3 = new javax.swing.JTextField();
         codigo1 = new javax.swing.JTextField();
+        jPanel3 = new javax.swing.JPanel();
+        dia_ingreso = new javax.swing.JComboBox<>();
+        mes_ingreso = new javax.swing.JComboBox<>();
+        año_ingres = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -66,7 +68,7 @@ public class REGISTRO extends javax.swing.JFrame {
         usuario.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         usuario.setForeground(new java.awt.Color(255, 255, 255));
         usuario.setText("USUARIO");
-        jPanel1.add(usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
+        jPanel1.add(usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
 
         ususu.setBackground(new java.awt.Color(255, 255, 255));
         ususu.setText("Ingrese el correo");
@@ -77,12 +79,12 @@ public class REGISTRO extends javax.swing.JFrame {
                 ususuMousePressed(evt);
             }
         });
-        jPanel1.add(ususu, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 210, 20));
+        jPanel1.add(ususu, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 210, 20));
 
         contraseña.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         contraseña.setForeground(new java.awt.Color(255, 255, 255));
         contraseña.setText("CODIGO POSTAL");
-        jPanel1.add(contraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, -1));
+        jPanel1.add(contraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, -1, -1));
 
         pass.setBackground(new java.awt.Color(255, 255, 255));
         pass.setText("******");
@@ -97,7 +99,7 @@ public class REGISTRO extends javax.swing.JFrame {
                 passActionPerformed(evt);
             }
         });
-        jPanel1.add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 210, 20));
+        jPanel1.add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 210, 20));
 
         boton.setBackground(new java.awt.Color(0, 0, 0));
         boton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -113,12 +115,12 @@ public class REGISTRO extends javax.swing.JFrame {
                 botonActionPerformed(evt);
             }
         });
-        jPanel1.add(boton, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 360, -1, -1));
+        jPanel1.add(boton, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 380, -1, -1));
 
         contraseña1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         contraseña1.setForeground(new java.awt.Color(255, 255, 255));
         contraseña1.setText("CORREO ELECTRONICO");
-        jPanel1.add(contraseña1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
+        jPanel1.add(contraseña1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
 
         boton1.setBackground(new java.awt.Color(0, 0, 0));
         boton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -134,17 +136,12 @@ public class REGISTRO extends javax.swing.JFrame {
                 boton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(boton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 360, -1, -1));
+        jPanel1.add(boton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 380, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Ya tienes una cuenta?");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 370, -1, -1));
-
-        contraseña2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        contraseña2.setForeground(new java.awt.Color(255, 255, 255));
-        contraseña2.setText("FECHA DE NACIMIENTO:");
-        jPanel1.add(contraseña2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 390, -1, -1));
 
         pass2.setBackground(new java.awt.Color(255, 255, 255));
         pass2.setText("******");
@@ -159,31 +156,15 @@ public class REGISTRO extends javax.swing.JFrame {
                 pass2ActionPerformed(evt);
             }
         });
-        jPanel1.add(pass2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 210, 20));
+        jPanel1.add(pass2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 210, 20));
 
         contraseña3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         contraseña3.setForeground(new java.awt.Color(255, 255, 255));
         contraseña3.setText("CONTRASEÑA");
-        jPanel1.add(contraseña3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
-
-        ususu2.setBackground(new java.awt.Color(255, 255, 255));
-        ususu2.setText("dd/mm/yyyy");
-        ususu2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        ususu2.setCaretColor(new java.awt.Color(204, 204, 204));
-        ususu2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                ususu2MousePressed(evt);
-            }
-        });
-        ususu2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ususu2ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(ususu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 120, 20));
+        jPanel1.add(contraseña3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/logo3.png"))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 210, 210));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 210, 210));
 
         jComboBox1.setBackground(new java.awt.Color(255, 255, 255));
         jComboBox1.setForeground(new java.awt.Color(0, 0, 0));
@@ -193,7 +174,7 @@ public class REGISTRO extends javax.swing.JFrame {
         contraseña5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         contraseña5.setForeground(new java.awt.Color(255, 255, 255));
         contraseña5.setText("CONFIRMA CONTRASEÑA");
-        jPanel1.add(contraseña5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, -1));
+        jPanel1.add(contraseña5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, -1, -1));
 
         ususu3.setBackground(new java.awt.Color(255, 255, 255));
         ususu3.setText("Ingresa su usuario");
@@ -204,16 +185,58 @@ public class REGISTRO extends javax.swing.JFrame {
                 ususu3MousePressed(evt);
             }
         });
-        jPanel1.add(ususu3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 210, 20));
+        jPanel1.add(ususu3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 210, 20));
 
         codigo1.setBackground(new java.awt.Color(255, 255, 255));
         codigo1.setText("Ingrese aqui");
-        jPanel1.add(codigo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 210, 30));
+        jPanel1.add(codigo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 210, 30));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, -1, 400));
+        jPanel3.setBackground(new java.awt.Color(0, 0, 0, 0));
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Fecha de ingreso"));
+        jPanel3.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel3.setFont(new java.awt.Font("Segoe UI", 1, 14));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/fondologin.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 710, -1));
+        dia_ingreso.setBackground(new java.awt.Color(255, 255, 255));
+        dia_ingreso.setForeground(new java.awt.Color(0, 0, 0));
+        dia_ingreso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30" }));
+
+        mes_ingreso.setBackground(new java.awt.Color(255, 255, 255));
+        mes_ingreso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" }));
+
+        año_ingres.setBackground(new java.awt.Color(255, 255, 255));
+        año_ingres.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1920", "1921", "1922", "1923", "1924", "1925", "1926", "1927", "1928", "1929", "1930", "1931", "1932", "1933", "1934", "1935", "1936", "1937", "1938", "1939", "1940", "1941", "1942", "1943", "1944", "1945", "1946", "1947", "1948", "1949", "1950", "1951", "1952", "1953", "1954", "1955", "1956", "1957", "1958", "1959", "1960", "1961", "1962", "1963", "1964", "1965", "1966", "1967", "1968", "1969", "1970", "1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024" }));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(dia_ingreso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(mes_ingreso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(año_ingres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(28, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(dia_ingreso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mes_ingreso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(año_ingres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
+        jPanel3.getAccessibleContext().setAccessibleName("");
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, -1, 420));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/hotellogin.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 710, 490));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -267,46 +290,60 @@ public class REGISTRO extends javax.swing.JFrame {
     }//GEN-LAST:event_botonActionPerformed
 
     private void boton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton1ActionPerformed
- 
-   String url = "jdbc:sqlserver://localhost:1433;databaseName=PPHS_puerto_plataa";
+ String url = "jdbc:sqlserver://localhost:1433;databaseName=PPHS_puerto_plataa";
     String usuarioSQL = "usuario22";
     String contraseñaSQL = "12345";
 
     String password = pass2.getText();
     String confirmPassword = pass.getText();
     
+    // Validar que la contraseña tenga al menos 8 caracteres y contenga letras
+    if (!password.matches(".*[a-zA-Z].*") || password.length() < 8) {
+        JOptionPane.showMessageDialog(null, "La contraseña debe tener al menos 8 caracteres y contener letras", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
     if (!password.equals(confirmPassword)) {
         JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden", "Error", JOptionPane.ERROR_MESSAGE);
         return;
     }
-    
+
     try (Connection connection = DriverManager.getConnection(url, usuarioSQL, contraseñaSQL)) {
         String correo = ususu.getText();
-        String fechaNacimientoString = ususu2.getText();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/M/yyyy");
-        LocalDate fechaNacimiento = null;
-        
-        try {
-            fechaNacimiento = LocalDate.parse(fechaNacimientoString, formatter);
-        } catch (DateTimeParseException e) {
-            JOptionPane.showMessageDialog(null, "Formato de fecha de nacimiento incorrecto. Utilice el formato d/M/yyyy", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        
+        int diaIngreso = Integer.parseInt((String) dia_ingreso.getSelectedItem());
+        int mesIngreso = mes_ingreso.getSelectedIndex() + 1; // Sumar 1 porque los meses se indexan desde 0
+        int añoIngreso = Integer.parseInt((String) año_ingres.getSelectedItem());
+
+        LocalDate fechaNacimiento = LocalDate.of(añoIngreso, mesIngreso, diaIngreso);
+
+        // Validar que el usuario sea mayor de 18 años
         LocalDate fechaActual = LocalDate.now();
         Period edad = Period.between(fechaNacimiento, fechaActual);
-
         if (edad.getYears() < 18) {
             JOptionPane.showMessageDialog(null, "Debe ser mayor de 18 años para registrarse", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        
+
+        // Formatear la fecha de nacimiento para la inserción en la base de datos
         String fechaNacimientoSql = fechaNacimiento.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
         String provincia = (String) jComboBox1.getSelectedItem();
         String codigoPostal = codigo1.getText();
-        
+
         // Validar el código postal si es necesario
         
+        // Verificar si ya existe un usuario con el mismo nombre o correo electrónico
+        String queryVerificacion = "SELECT * FROM Clientes WHERE nombre = ? OR gmail = ?";
+        try (PreparedStatement statementVerificacion = connection.prepareStatement(queryVerificacion)) {
+            statementVerificacion.setString(1, ususu3.getText());
+            statementVerificacion.setString(2, correo);
+            ResultSet resultSet = statementVerificacion.executeQuery();
+            if (resultSet.next()) {
+                JOptionPane.showMessageDialog(null, "Ya existe un usuario con el mismo nombre o correo electrónico", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+        }
+
+        // Si no hay conflictos, procedemos a insertar el nuevo usuario
         String query = "INSERT INTO Clientes (nombre, gmail, contraseña, fecha_nacimiento, Provincia, codigo_postal) VALUES (?, ?, ?, ?, ?, ?)";
         try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setString(1, ususu3.getText());
@@ -315,7 +352,7 @@ public class REGISTRO extends javax.swing.JFrame {
             statement.setString(4, fechaNacimientoSql);
             statement.setString(5, provincia);
             statement.setString(6, codigoPostal);
-            
+
             int rowsInserted = statement.executeUpdate();
             if (rowsInserted > 0) {
                 JOptionPane.showMessageDialog(null, "Cliente registrado exitosamente", "Registro exitoso", JOptionPane.INFORMATION_MESSAGE);
@@ -332,7 +369,7 @@ public class REGISTRO extends javax.swing.JFrame {
 }
 
 private void redirectToMainPanel(String provincia) {
-    switch(provincia) {
+    switch (provincia) {
         case "Puerto Plata":
             new PRINCIPAL_USUARIO1().setVisible(true);
             break;
@@ -352,6 +389,8 @@ private void redirectToMainPanel(String provincia) {
             JOptionPane.showMessageDialog(null, "Provincia no válida", "Error", JOptionPane.ERROR_MESSAGE);
             break;
     }
+
+
     }//GEN-LAST:event_boton1ActionPerformed
 
     private void pass2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pass2MousePressed
@@ -361,14 +400,6 @@ private void redirectToMainPanel(String provincia) {
     private void pass2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pass2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_pass2ActionPerformed
-
-    private void ususu2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ususu2MousePressed
-
-    }//GEN-LAST:event_ususu2MousePressed
-
-    private void ususu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ususu2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ususu2ActionPerformed
 
     private void ususu3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ususu3MousePressed
         // TODO add your handling code here:
@@ -410,25 +441,27 @@ private void redirectToMainPanel(String provincia) {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> año_ingres;
     private javax.swing.JButton boton;
     private javax.swing.JButton boton1;
     private javax.swing.JTextField codigo1;
     private javax.swing.JLabel contraseña;
     private javax.swing.JLabel contraseña1;
-    private javax.swing.JLabel contraseña2;
     private javax.swing.JLabel contraseña3;
     private javax.swing.JLabel contraseña5;
+    private javax.swing.JComboBox<String> dia_ingreso;
     private javax.swing.JLabel inicio1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JComboBox<String> mes_ingreso;
     private javax.swing.JPasswordField pass;
     private javax.swing.JPasswordField pass2;
     private javax.swing.JLabel usuario;
     private javax.swing.JTextField ususu;
-    private javax.swing.JTextField ususu2;
     private javax.swing.JTextField ususu3;
     // End of variables declaration//GEN-END:variables
 }

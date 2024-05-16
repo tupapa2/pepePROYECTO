@@ -138,7 +138,7 @@ public class LOGIN3 extends javax.swing.JFrame {
         inicio1.setForeground(new java.awt.Color(255, 255, 255));
         inicio1.setText("INICIAR SESION");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/fondologin.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/hotellogin.png"))); // NOI18N
         jLabel2.setText("jLabel2");
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0, 170));
@@ -220,14 +220,13 @@ public class LOGIN3 extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(134, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(inicio1)
-                        .addGap(224, 224, 224))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(127, 127, 127))))
+                .addContainerGap(124, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(127, 127, 127))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(244, 244, 244)
+                .addComponent(inicio1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 711, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -236,9 +235,9 @@ public class LOGIN3 extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(15, Short.MAX_VALUE)
+                .addContainerGap()
                 .addComponent(inicio1)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(81, 81, 81))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -275,7 +274,7 @@ public class LOGIN3 extends javax.swing.JFrame {
     }//GEN-LAST:event_moverMousePressed
 
     private void boton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton1ActionPerformed
-    String usuario = ususu.getText();
+   String usuario = ususu.getText();
     String correo = ususu1.getText();
     String contraseña = new String(pass.getPassword());
     String idAdministrativo = jTextField1.getText();
@@ -288,71 +287,75 @@ public class LOGIN3 extends javax.swing.JFrame {
         pst.setString(2, correo);
         pst.setString(3, contraseña);
         ResultSet rs = pst.executeQuery();
-
-        if (rs.next()) {
-            String provinciaSeleccionada = (String) jComboBox1.getSelectedItem();
-            switch (provinciaSeleccionada) {
-                case "Puerto Plata":
-                    new PRINCIPAL_USUARIO1().setVisible(true);
-                    break;
-                case "Zamana":
-                    new PRINCIPAL_USUARIO2().setVisible(true);
-                    break;
-                case "Punta Cana":
-                    new PRINCIPAL_USUARIO3().setVisible(true);
-                    break;
-                case "Barahona":
-                    new PRINCIPAL_USUARIO4().setVisible(true);
-                    break;
-                case "San Cristobal":
-                    new PRINCIPAL_USUARIO5().setVisible(true);
-                    break;
-                default:
-            }
-            dispose(); // Cierra el JFrame actual
-        } else {
-            // El usuario no se encontró en la base de datos
-            if (!idAdministrativo.isEmpty()) {
-                // Aquí puedes implementar la lógica para mostrar los frames administrativos según el ID administrativo
-                // Por ahora, simplemente mostraremos un mensaje de confirmación
-                if (idAdministrativo.equals("3306A2E7-CDCF-474B-ACD7-B9F95A1317F7")) {
-                    new PRINCIPAL0().setVisible(true);
-                    dispose(); // Cierra la ventana actual
-                } else {
-                    switch(idAdministrativo) {
-                        case "PRINCIPAL1":
-                            new PRINCIPAL1().setVisible(true);
-                            dispose(); // Cierra la ventana actual
-                            break;
-                        case "PRINCIPAL2":
-                            new PRINCIPAL2().setVisible(true);
-                            dispose(); // Cierra la ventana actual
-                            break;
-                        case "PRINCIPAL3":
-                            new PRINCIPAL3().setVisible(true);
-                            dispose(); // Cierra la ventana actual
-                            break;
-                        case "PRINCIPAL4":
-                            new PRINCIPAL4().setVisible(true);
-                            dispose(); // Cierra la ventana actual
-                            break;
-                        default:
-                            JOptionPane.showMessageDialog(this, "ID de usuario administrativo no válido: " + idAdministrativo);
-                    }
-                }
-            } else {
-                // Si no se proporcionó un ID administrativo, muestra un mensaje de error
-                JOptionPane.showMessageDialog(this, "Debe ingresar un ID administrativo para acceder al panel administrativo");
-            }
+if (rs.next()) {
+    String provinciaSeleccionada = (String) jComboBox1.getSelectedItem();
+    System.out.println("Provincia Seleccionada: " + provinciaSeleccionada);
+    switch (provinciaSeleccionada) {
+        case "Puerto Plata":
+            new PRINCIPAL_USUARIO1().setVisible(true);
+            break;
+        case "Zamana":
+            new PRINCIPAL_USUARIO2().setVisible(true);
+            break;
+        case "Punta Cana":
+            new PRINCIPAL_USUARIO3().setVisible(true);
+            break;
+        case "Barahona":
+            new PRINCIPAL_USUARIO4().setVisible(true);
+            break;
+        case "San Cristobal":
+            new PRINCIPAL_USUARIO5().setVisible(true);
+            break;
+        default:
+            System.out.println("No se encontró una provincia válida.");
+    }
+    dispose(); // Cierra el JFrame actual
+if (!idAdministrativo.isEmpty()) {
+    System.out.println("ID Administrativo ingresado: " + idAdministrativo);
+    // Verificar si el ID administrativo es para el panel administrativo
+    if (idAdministrativo.equals("06C81D00-54A3-46FC-95DF-11F8F15EF276")) {
+        System.out.println("Accediendo al panel PRINCIPAL0");
+        new PRINCIPAL0().setVisible(true);
+        dispose(); // Cierra la ventana actual
+    }else{
+        switch(idAdministrativo) {
+            case "7C71331B-29FB-4C61-8645-A9327BD6B4BE":
+                System.out.println("Accediendo al panel PRINCIPAL1");
+                new PRINCIPAL1().setVisible(true);
+                dispose(); // Cierra la ventana actual
+                break;
+            case "6739BE03-233F-450A-894C-3C5285D8DA49":
+                System.out.println("Accediendo al panel PRINCIPAL2");
+                new PRINCIPAL2().setVisible(true);
+                dispose(); // Cierra la ventana actual
+                break;
+            case "6CEDCE86-53FD-4177-9209-E89D69575188":
+                System.out.println("Accediendo al panel PRINCIPAL3");
+                new PRINCIPAL3().setVisible(true);
+                dispose(); // Cierra la ventana actual
+                break;
+            case "51CBCA5F-6123-467F-9B84-4A74C291769C":
+                System.out.println("Accediendo al panel PRINCIPAL4");
+                new PRINCIPAL4().setVisible(true);
+                dispose(); // Cierra la ventana actual
+                break;
+          
         }
+    }
+} else {
+    // Si no se proporcionó un ID administrativo, muestra un mensaje de error
+    System.out.println("ID Administrativo no ingresado.");
+    JOptionPane.showMessageDialog(this, "Debe ingresar un ID administrativo para acceder al panel administrativo");
+}
+}
 
+    
         rs.close();
         pst.close();
         conn.close();
     } catch (SQLException ex) {
         JOptionPane.showMessageDialog(this, "Error al conectar a la base de datos: " + ex.getMessage());
     }
-
 
 
     }//GEN-LAST:event_boton1ActionPerformed
